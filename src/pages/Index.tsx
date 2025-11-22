@@ -6,6 +6,7 @@ import DoctorTestimonial from "@/components/DoctorTestimonial";
 import Benefits from "@/components/Benefits";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
+import WhatsAppSection from "@/components/WhatsAppSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -19,6 +20,7 @@ const Index = () => {
       <Benefits />
       <Pricing />
       <FAQ />
+      <WhatsAppSection />
       <Footer />
     </div>
   );

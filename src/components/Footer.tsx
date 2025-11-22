@@ -54,9 +54,14 @@ const Footer = () => {
                     contato@guiasononatural.com
                   </a>
                 </li>
+                <li>
+                  <a href="https://wa.me/5511999999999" className="hover:text-accent transition-colors">
+                    WhatsApp: (11) 99999-9999
+                  </a>
+                </li>
                 <li className="pt-4">
                   <p className="text-xs">
-                    Suporte: Segunda a Sexta<br />
+                    Atendimento: Segunda a Sexta<br />
                     09h às 18h
                   </p>
                 </li>

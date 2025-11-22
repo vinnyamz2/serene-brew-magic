@@ -1,10 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Check, Sparkles } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import ingredients from "@/assets/ingredients.jpg";
 
 const MainRecipe = () => {
-  const scrollToPrice = () => {
-    document.getElementById('price')?.scrollIntoView({ behavior: 'smooth' });
+  const navigate = useNavigate();
+  
+  const handleCTA = () => {
+    navigate('/pre-checkout');
   };
 
   const benefits = [
@@ -103,7 +106,7 @@ const MainRecipe = () => {
               
               <Button 
                 size="lg"
-                onClick={scrollToPrice}
+                onClick={handleCTA}
                 className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-6 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 mt-8"
               >
                 Quero acesso ao preparo completo
