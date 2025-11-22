@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Check, Lock, Zap, Gift } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Pricing = () => {
+  const navigate = useNavigate();
+  
   const handleCheckout = () => {
-    // This would connect to your payment system
-    alert("Redirecionando para pagamento seguro...");
+    navigate('/pre-checkout');
   };
 
   const includes = [

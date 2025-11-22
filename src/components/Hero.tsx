@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import logo from "@/assets/logo-sono.png";
 import heroTea from "@/assets/hero-tea.jpg";
 
 const Hero = () => {
-  const scrollToPrice = () => {
-    document.getElementById('price')?.scrollIntoView({ behavior: 'smooth' });
+  const navigate = useNavigate();
+  
+  const handleCTA = () => {
+    navigate('/pre-checkout');
   };
 
   return (
@@ -40,7 +43,7 @@ const Hero = () => {
 
             <Button 
               size="lg" 
-              onClick={scrollToPrice}
+              onClick={handleCTA}
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-6 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-pulse-glow group"
             >
               Quero desbloquear as receitas agora
