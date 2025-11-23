@@ -3,31 +3,25 @@ import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import logo from "@/assets/logo-sono.png";
 import heroTea from "@/assets/hero-tea.jpg";
-
 const Hero = () => {
   const navigate = useNavigate();
-  
   const handleCTA = () => {
     navigate('/pre-checkout');
   };
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-night via-primary to-background">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-night via-primary to-background">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-10 w-64 h-64 bg-secondary rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-botanical/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-botanical/30 rounded-full blur-3xl animate-float" style={{
+        animationDelay: '1s'
+      }}></div>
       </div>
 
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left content */}
           <div className="space-y-8 text-center md:text-left animate-fade-in">
-            <img 
-              src={logo} 
-              alt="Guia Natural do Sono Profundo" 
-              className="w-full max-w-md mx-auto md:mx-0 animate-float"
-            />
+            <img src={logo} alt="Guia Natural do Sono Profundo" className="w-full max-w-md mx-auto md:mx-0 animate-float" />
             
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-night-foreground leading-tight">
@@ -35,17 +29,13 @@ const Hero = () => {
                 <span className="text-gradient">simples e poderosas</span>
               </h1>
               
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
+              <p className="text-lg md:text-xl max-w-2xl text-yellow-300">
                 Descubra 3 receitas anti-insônia com ingredientes baratos, mas conheça em destaque o{" "}
                 <span className="font-semibold text-accent">Chá Sono 7</span> — usado por milhares de pessoas para adormecer rápido e relaxar profundamente.
               </p>
             </div>
 
-            <Button 
-              size="lg" 
-              onClick={handleCTA}
-              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-6 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-pulse-glow group"
-            >
+            <Button size="lg" onClick={handleCTA} className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-6 text-lg rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-pulse-glow group">
               Quero desbloquear as receitas agora
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
@@ -67,17 +57,17 @@ const Hero = () => {
           </div>
 
           {/* Right image */}
-          <div className="relative animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <div className="relative animate-fade-in" style={{
+          animationDelay: '0.3s'
+        }}>
             <div className="relative rounded-3xl overflow-hidden shadow-2xl hover-lift">
-              <img 
-                src={heroTea} 
-                alt="Chá relaxante para dormir melhor" 
-                className="w-full h-auto"
-              />
+              <img src={heroTea} alt="Chá relaxante para dormir melhor" className="w-full h-auto" />
               {/* Steam effect overlay */}
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-32 h-32 bg-gradient-to-t from-transparent via-secondary/40 to-transparent rounded-full blur-2xl animate-steam-rise"></div>
-                <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-24 h-24 bg-gradient-to-t from-transparent via-secondary/30 to-transparent rounded-full blur-xl animate-steam-rise" style={{ animationDelay: '0.8s' }}></div>
+                <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-24 h-24 bg-gradient-to-t from-transparent via-secondary/30 to-transparent rounded-full blur-xl animate-steam-rise" style={{
+                animationDelay: '0.8s'
+              }}></div>
               </div>
             </div>
             
@@ -94,8 +84,6 @@ const Hero = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
