@@ -3,9 +3,9 @@ import { Clock } from "lucide-react";
 
 const UrgencyTimer = () => {
   const [timeLeft, setTimeLeft] = useState({
-    hours: 2,
-    minutes: 47,
-    seconds: 30
+    hours: 0,
+    minutes: 50,
+    seconds: 0
   });
 
   useEffect(() => {

@@ -1,20 +1,58 @@
 import { useEffect, useState } from "react";
 import { X, ShoppingBag, Users } from "lucide-react";
 
-const messages = [
-  { name: "Maria Vieira", action: "acabou de comprar o Guia + Receita Extra" },
-  { name: "João Santos", action: "acabou de comprar o Guia Completo" },
-  { name: "Ana Paula", action: "acabou de comprar o Guia + 2 Bônus" },
-  { name: "Carlos Lima", action: "acabou de comprar o Guia + Receita Extra" },
-  { type: "count", message: "15 pessoas estão comprando agora" },
-  { name: "Fernanda Costa", action: "acabou de comprar o Guia Completo" },
-  { type: "count", message: "23 pessoas estão visualizando esta oferta" },
-  { name: "Roberto Silva", action: "acabou de comprar o Guia + 2 Bônus" },
+const firstNames = [
+  "Maria", "João", "Ana", "Carlos", "Fernanda", "Roberto", "Juliana", "Pedro",
+  "Camila", "Lucas", "Beatriz", "Rafael", "Mariana", "Felipe", "Larissa", "Bruno",
+  "Patricia", "Gabriel", "Amanda", "Thiago", "Carla", "Diego", "Renata", "Marcos",
+  "Priscila", "André", "Vanessa", "Rodrigo", "Cristina", "Fernando", "Daniela",
+  "Leandro", "Sabrina", "Gustavo", "Adriana", "Ricardo", "Letícia", "Vinícius",
+  "Tatiana", "Maurício", "Débora", "César", "Elaine", "Fábio", "Luciana"
 ];
+
+const lastNames = [
+  "Silva", "Santos", "Oliveira", "Souza", "Lima", "Costa", "Ferreira", "Rodrigues",
+  "Almeida", "Nascimento", "Carvalho", "Pereira", "Ribeiro", "Martins", "Araújo",
+  "Rocha", "Monteiro", "Barbosa", "Correia", "Dias", "Gomes", "Fernandes", "Mendes",
+  "Castro", "Cardoso", "Teixeira", "Vieira", "Melo", "Freitas", "Cavalcanti"
+];
+
+const actions = [
+  "acabou de comprar o Guia + Receita Extra",
+  "acabou de comprar o Guia Completo",
+  "acabou de comprar o Guia + 2 Bônus",
+  "acabou de comprar o Pack Completo",
+  "acabou de garantir acesso ao Guia"
+];
+
+type MessageType = 
+  | { type: "count"; message: string }
+  | { name: string; action: string };
+
+const generateRandomMessage = (): MessageType => {
+  const isCountMessage = Math.random() > 0.7; // 30% chance de ser mensagem de contagem
+  
+  if (isCountMessage) {
+    const count = Math.floor(Math.random() * 20) + 10; // Entre 10 e 29
+    return {
+      type: "count" as const,
+      message: `${count} pessoas estão ${Math.random() > 0.5 ? 'comprando agora' : 'visualizando esta oferta'}`
+    };
+  }
+  
+  const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+  const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
+  const action = actions[Math.floor(Math.random() * actions.length)];
+  
+  return {
+    name: `${firstName} ${lastName}`,
+    action
+  };
+};
 
 const SocialProofPopup = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [currentMessage, setCurrentMessage] = useState(0);
+  const [currentMessage, setCurrentMessage] = useState(generateRandomMessage());
 
   useEffect(() => {
     const showPopup = () => {
@@ -27,7 +65,7 @@ const SocialProofPopup = () => {
 
     // Then show every 8-12 seconds
     const interval = setInterval(() => {
-      setCurrentMessage((prev) => (prev + 1) % messages.length);
+      setCurrentMessage(generateRandomMessage());
       showPopup();
     }, Math.random() * 4000 + 8000);
 
@@ -37,7 +75,7 @@ const SocialProofPopup = () => {
     };
   }, []);
 
-  const message = messages[currentMessage];
+  const message = currentMessage;
 
   if (!isVisible) return null;
 
@@ -46,7 +84,7 @@ const SocialProofPopup = () => {
       <div className="bg-card border-2 border-botanical shadow-2xl rounded-2xl p-4 max-w-sm hover-lift">
         <div className="flex items-start gap-3">
           <div className="flex-shrink-0 p-2 bg-botanical/20 rounded-full">
-            {message.type === "count" ? (
+            {'type' in message && message.type === "count" ? (
               <Users className="w-5 h-5 text-botanical" />
             ) : (
               <ShoppingBag className="w-5 h-5 text-botanical" />
@@ -54,17 +92,17 @@ const SocialProofPopup = () => {
           </div>
           
           <div className="flex-1 min-w-0">
-            {message.type === "count" ? (
+            {'type' in message && message.type === "count" ? (
               <p className="text-sm font-semibold text-foreground">
                 {message.message}
               </p>
             ) : (
               <>
                 <p className="text-sm font-semibold text-foreground">
-                  {message.name}
+                  {'name' in message && message.name}
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  {message.action}
+                  {'action' in message && message.action}
                 </p>
               </>
             )}
