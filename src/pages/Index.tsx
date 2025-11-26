@@ -4,6 +4,7 @@ import MainRecipe from "@/components/MainRecipe";
 import BonusRecipes from "@/components/BonusRecipes";
 import DoctorTestimonial from "@/components/DoctorTestimonial";
 import Benefits from "@/components/Benefits";
+import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import WhatsAppSection from "@/components/WhatsAppSection";
@@ -18,6 +19,7 @@ const Index = () => {
       <BonusRecipes />
       <DoctorTestimonial />
       <Benefits />
+      <Testimonials />
       <Pricing />
       <FAQ />
       <WhatsAppSection />
