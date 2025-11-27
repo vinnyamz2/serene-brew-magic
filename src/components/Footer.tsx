@@ -50,13 +50,13 @@ const Footer = () => {
               <h3 className="font-semibold text-lg">Contato</h3>
               <ul className="space-y-2 text-night-foreground/70 text-sm">
                 <li>
-                  <a href="mailto:contato@guiasononatural.com" className="hover:text-accent transition-colors">
-                    contato@guiasononatural.com
+                  <a href="mailto:guialeads00@gmail.com" className="hover:text-accent transition-colors">
+                    guialeads00@gmail.com
                   </a>
                 </li>
                 <li>
-                  <a href="https://wa.me/5511999999999" className="hover:text-accent transition-colors">
-                    WhatsApp: (11) 99999-9999
+                  <a href="https://wa.me/5594991022124" className="hover:text-accent transition-colors">
+                    WhatsApp: (94) 99102-2124
                   </a>
                 </li>
                 <li className="pt-4">

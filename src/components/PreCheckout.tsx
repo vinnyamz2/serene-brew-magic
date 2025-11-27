@@ -15,8 +15,8 @@ const PreCheckout = () => {
       id: "main",
       name: "Guia Natural do Sono Profundo",
       description: "Receita completa do Chá Sono 7 + 2 receitas bônus + Guias",
-      price: 7,
-      originalPrice: 79,
+      price: 17,
+      originalPrice: 97,
       included: true,
       features: [
         "Receita Chá Sono 7",
@@ -31,7 +31,7 @@ const PreCheckout = () => {
       id: "extra1",
       name: "Receita EXTRA: Sono de Ouro",
       description: "Receita premium para noites de sono ainda mais profundo",
-      price: 5,
+      price: 7,
       originalPrice: 29,
       features: [
         "Receita exclusiva premium",
@@ -44,7 +44,7 @@ const PreCheckout = () => {
       id: "extra2",
       name: "Pack Completo de Chás",
       description: "Chá CalmEase + Mix Relax Night em versões expandidas",
-      price: 5,
+      price: 7,
       originalPrice: 39,
       features: [
         "Versões expandidas",
@@ -119,7 +119,7 @@ const PreCheckout = () => {
               Complete seu pedido
             </h1>
             <p className="text-lg text-muted-foreground">
-              Adicione mais receitas por apenas R$ 5 cada e economize ainda mais
+              Adicione mais receitas por apenas R$ 7 cada e economize ainda mais
             </p>
           </div>
 

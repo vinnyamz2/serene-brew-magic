@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 
 const WhatsAppSection = () => {
-  const whatsappNumber = "5511999999999"; // formato internacional
+  const whatsappNumber = "5594991022124"; // formato internacional
   const message = encodeURIComponent("Olá! Vim pela landing page e tenho uma dúvida sobre o Guia Natural do Sono Profundo.");
   
   const handleWhatsAppClick = () => {
@@ -39,7 +39,7 @@ const WhatsAppSection = () => {
             </Button>
             
             <p className="text-sm text-muted-foreground">
-              Atendimento: (11) 99999-9999
+              Atendimento: (94) 99102-2124
             </p>
           </div>
         </div>
