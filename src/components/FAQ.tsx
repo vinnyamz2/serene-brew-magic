@@ -90,8 +90,8 @@ const FAQ = () => {
               </p>
               <p className="text-muted-foreground">
                 Entre em contato conosco pelo email:{" "}
-                <a href="mailto:contato@guiasononatural.com" className="text-accent hover:underline">
-                  contato@guiasononatural.com
+                <a href="mailto:guialeads00@gmail.com" className="text-accent hover:underline">
+                  guialeads00@gmail.com
                 </a>
               </p>
             </div>
