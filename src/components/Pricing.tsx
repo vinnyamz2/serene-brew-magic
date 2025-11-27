@@ -50,15 +50,15 @@ const Pricing = () => {
                 <div className="space-y-2">
                   <div className="flex items-center justify-center gap-3">
                     <span className="text-2xl text-night-foreground/60 line-through">
-                      De R$ 79
+                      De R$ 97
                     </span>
                     <span className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-bold">
-                      91% OFF
+                      82% OFF
                     </span>
                   </div>
                   <div className="space-y-1">
                     <div className="text-6xl md:text-7xl font-bold text-accent">
-                      R$ 7
+                      R$ 17
                     </div>
                     <p className="text-night-foreground/80 text-lg">
                       Pagamento único • Acesso imediato
@@ -99,7 +99,7 @@ const Pricing = () => {
                 onClick={handleCheckout}
                 className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-xl py-8 rounded-2xl shadow-2xl hover:shadow-accent/50 transition-all duration-300 hover:scale-105 animate-pulse-glow"
               >
-                Quero pagar só R$ 7 e acessar agora
+                Quero pagar só R$ 17 e acessar agora
               </Button>
 
               {/* Trust badges */}
@@ -127,7 +127,7 @@ const Pricing = () => {
                 Garantia Incondicional de 7 Dias
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Se você não gostar do conteúdo ou achar que não vale R$ 7, 
+                Se você não gostar do conteúdo ou achar que não vale R$ 17, 
                 devolvemos seu dinheiro. Simples assim. Sem perguntas, sem burocracia.
               </p>
             </div>
