@@ -58,7 +58,7 @@ const DoctorTestimonial = () => {
               <div className="text-sm text-muted-foreground">Preparo</div>
             </div>
             <div className="text-center space-y-2">
-              <div className="text-3xl font-bold text-accent">R$ 7</div>
+              <div className="text-3xl font-bold text-accent">R$ 17</div>
               <div className="text-sm text-muted-foreground">Investimento</div>
             </div>
           </div>

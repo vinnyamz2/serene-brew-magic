@@ -93,7 +93,7 @@ const BonusRecipes = () => {
           <div className="inline-block bg-botanical/10 border-2 border-botanical rounded-2xl p-6 max-w-2xl">
             <p className="text-lg font-semibold text-foreground">
               3 receitas completas por apenas{" "}
-              <span className="text-botanical text-2xl">R$ 7</span>
+              <span className="text-botanical text-2xl">R$ 17</span>
             </p>
           </div>
         </div>

@@ -109,7 +109,7 @@ const TermsOfService = () => {
               </h2>
               <p>
                 Para questões sobre estes Termos de Uso, entre em contato através
-                do email: contato@guiasononatural.com ou WhatsApp: (11) 99999-9999
+                do email: guialeads00@gmail.com ou WhatsApp: (94) 99102-2124
               </p>
             </section>
 

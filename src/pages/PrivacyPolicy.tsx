@@ -137,8 +137,8 @@ const PrivacyPolicy = () => {
                 tratamos seus dados, entre em contato:
               </p>
               <ul className="list-none ml-4 space-y-2 mt-2">
-                <li>Email: contato@guiasononatural.com</li>
-                <li>WhatsApp: (11) 99999-9999</li>
+                <li>Email: guialeads00@gmail.com</li>
+                <li>WhatsApp: (94) 99102-2124</li>
               </ul>
             </section>
 
