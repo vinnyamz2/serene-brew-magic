@@ -147,11 +147,11 @@ const PreCheckout = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-5xl mx-auto">
           {/* Title */}
-          <div className="text-center mb-8 space-y-4 animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground">
+          <div className="text-center mb-6 md:mb-8 space-y-3 md:space-y-4 animate-fade-in">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
               Complete seu pedido
             </h1>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground px-2">
               Adicione mais receitas por apenas R$ 7 cada e economize ainda mais
             </p>
           </div>
@@ -179,7 +179,7 @@ const PreCheckout = () => {
             {items.map((item, index) => (
               <div
                 key={item.id}
-                className={`bg-card border-2 rounded-2xl p-6 transition-all duration-300 hover-lift animate-fade-in ${
+                className={`bg-card border-2 rounded-xl md:rounded-2xl p-4 md:p-6 transition-all duration-300 hover-lift animate-fade-in ${
                   selectedItems.includes(item.id)
                     ? 'border-botanical shadow-xl'
                     : 'border-border'
@@ -187,68 +187,68 @@ const PreCheckout = () => {
                 style={{ animationDelay: `${0.3 + (index * 0.1)}s` }}
                 onClick={() => !item.included && toggleItem(item.id)}
               >
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-3 md:gap-4">
                   {/* Checkbox */}
-                  <div className={`flex-shrink-0 mt-1 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${
+                  <div className={`flex-shrink-0 mt-0.5 w-5 h-5 md:w-6 md:h-6 rounded-full border-2 flex items-center justify-center transition-colors ${
                     selectedItems.includes(item.id)
                       ? 'bg-botanical border-botanical'
                       : 'border-muted-foreground'
                   }`}>
                     {selectedItems.includes(item.id) && (
-                      <Check className="w-4 h-4 text-botanical-foreground" />
+                      <Check className="w-3 h-3 md:w-4 md:h-4 text-botanical-foreground" />
                     )}
                   </div>
 
                   {/* Content */}
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-4 mb-2">
-                      <div>
-                        <h3 className="text-xl font-bold text-foreground mb-1">
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4 mb-2">
+                      <div className="min-w-0">
+                        <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground mb-1 leading-tight break-words">
                           {item.name}
                         </h3>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-xs sm:text-sm text-muted-foreground break-words">
                           {item.description}
                         </p>
                       </div>
                       
-                      <div className="text-right flex-shrink-0">
-                        <div className="text-sm text-muted-foreground line-through">
+                      <div className="text-left sm:text-right flex-shrink-0 flex sm:flex-col items-center sm:items-end gap-2 sm:gap-0">
+                        <div className="text-xs sm:text-sm text-muted-foreground line-through">
                           R$ {item.originalPrice}
                         </div>
-                        <div className="text-2xl font-bold text-accent">
+                        <div className="text-xl sm:text-2xl font-bold text-accent">
                           R$ {item.price}
                         </div>
                       </div>
                     </div>
 
                     {/* Features */}
-                    <div className="grid sm:grid-cols-2 gap-2 mt-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 md:gap-2 mt-3 md:mt-4">
                       {item.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <Check className="w-4 h-4 text-botanical flex-shrink-0" />
-                          <span>{feature}</span>
+                        <div key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-muted-foreground">
+                          <Check className="w-3 h-3 sm:w-4 sm:h-4 text-botanical flex-shrink-0 mt-0.5" />
+                          <span className="break-words">{feature}</span>
                         </div>
                       ))}
                     </div>
 
                     {item.included && (
-                      <div className="mt-4 inline-flex items-center gap-2 bg-botanical/20 text-botanical px-3 py-1 rounded-full text-sm font-semibold">
-                        <Check className="w-4 h-4" />
+                      <div className="mt-3 md:mt-4 inline-flex items-center gap-1.5 md:gap-2 bg-botanical/20 text-botanical px-2 md:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
+                        <Check className="w-3 h-3 md:w-4 md:h-4" />
                         Incluído no seu pedido
                       </div>
                     )}
 
                     {!item.included && !selectedItems.includes(item.id) && (
-                      <div className="mt-4">
+                      <div className="mt-3 md:mt-4">
                         <Button
                           size="sm"
                           onClick={(e) => {
                             e.stopPropagation();
                             toggleItem(item.id);
                           }}
-                          className="bg-accent hover:bg-accent/90 text-accent-foreground"
+                          className="bg-accent hover:bg-accent/90 text-accent-foreground text-xs sm:text-sm"
                         >
-                          <Plus className="w-4 h-4 mr-2" />
+                          <Plus className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                           Adicionar ao pedido
                         </Button>
                       </div>
@@ -260,20 +260,20 @@ const PreCheckout = () => {
           </div>
 
           {/* Summary */}
-          <div className="bg-gradient-to-br from-night to-primary text-night-foreground rounded-3xl p-8 shadow-2xl animate-fade-in" style={{ animationDelay: '0.6s' }}>
-            <div className="space-y-6">
-              <div className="flex justify-between items-center text-lg">
+          <div className="bg-gradient-to-br from-night to-primary text-night-foreground rounded-2xl md:rounded-3xl p-5 md:p-8 shadow-2xl animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            <div className="space-y-4 md:space-y-6">
+              <div className="flex justify-between items-center text-base md:text-lg">
                 <span>Subtotal:</span>
                 <span className="font-semibold">R$ {calculateTotal()}</span>
               </div>
               
-              <div className="flex justify-between items-center text-lg text-botanical">
-                <span>Você está economizando:</span>
+              <div className="flex justify-between items-center text-base md:text-lg text-botanical">
+                <span>Você economiza:</span>
                 <span className="font-bold">R$ {calculateSavings()}</span>
               </div>
               
               <div className="border-t border-night-foreground/20 pt-4">
-                <div className="flex justify-between items-center text-2xl font-bold">
+                <div className="flex justify-between items-center text-xl md:text-2xl font-bold">
                   <span>Total:</span>
                   <span className="text-accent">R$ {calculateTotal()}</span>
                 </div>
@@ -282,24 +282,24 @@ const PreCheckout = () => {
               <Button
                 size="lg"
                 onClick={handleCheckout}
-                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-xl py-8 rounded-2xl shadow-2xl hover:shadow-accent/50 transition-all duration-300 hover:scale-105 animate-pulse-glow group"
+                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-base sm:text-lg md:text-xl py-6 md:py-8 rounded-xl md:rounded-2xl shadow-2xl hover:shadow-accent/50 transition-all duration-300 hover:scale-105 animate-pulse-glow group"
               >
-                Continuar para o Pagamento
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                <span className="truncate">Continuar para o Pagamento</span>
+                <ArrowRight className="ml-2 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
               </Button>
 
               {/* Trust badges */}
-              <div className="flex flex-wrap justify-center items-center gap-6 pt-4 text-sm text-night-foreground/80">
-                <div className="flex items-center gap-2">
-                  <Lock className="w-4 h-4" />
+              <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-6 pt-2 md:pt-4 text-xs sm:text-sm text-night-foreground/80">
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <Lock className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
                   <span>Pagamento 100% seguro</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Zap className="w-4 h-4" />
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <Zap className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
                   <span>Acesso imediato</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4" />
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <Check className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
                   <span>Garantia de 7 dias</span>
                 </div>
               </div>
