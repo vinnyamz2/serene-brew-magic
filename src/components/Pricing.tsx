@@ -57,10 +57,10 @@ const Pricing = () => {
                     </span>
                   </div>
                   <div className="space-y-1">
-                    <div className="text-6xl md:text-7xl font-bold text-accent">
+                    <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-accent">
                       R$ 17
                     </div>
-                    <p className="text-night-foreground/80 text-lg">
+                    <p className="text-night-foreground/80 text-sm sm:text-base md:text-lg">
                       Pagamento único • Acesso imediato
                     </p>
                   </div>
@@ -97,23 +97,23 @@ const Pricing = () => {
               <Button
                 size="lg"
                 onClick={handleCheckout}
-                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-xl py-8 rounded-2xl shadow-2xl hover:shadow-accent/50 transition-all duration-300 hover:scale-105 animate-pulse-glow"
+                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-base sm:text-lg md:text-xl py-6 md:py-8 rounded-xl md:rounded-2xl shadow-2xl hover:shadow-accent/50 transition-all duration-300 hover:scale-105 animate-pulse-glow"
               >
-                Quero pagar só R$ 17 e acessar agora
+                <span className="truncate">Quero pagar só R$ 17 e acessar agora</span>
               </Button>
 
               {/* Trust badges */}
-              <div className="flex flex-wrap justify-center items-center gap-6 pt-4 text-sm text-night-foreground/80">
-                <div className="flex items-center gap-2">
-                  <Lock className="w-4 h-4" />
+              <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-6 pt-2 md:pt-4 text-xs sm:text-sm text-night-foreground/80">
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <Lock className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
                   <span>Pagamento 100% seguro</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Zap className="w-4 h-4" />
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <Zap className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
                   <span>Acesso imediato</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4" />
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <Check className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
                   <span>Garantia de 7 dias</span>
                 </div>
               </div>
