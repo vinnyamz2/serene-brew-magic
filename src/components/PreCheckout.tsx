@@ -90,19 +90,34 @@ const PreCheckout = () => {
     const hasExtra2 = selectedItems.includes("extra2");
     
     let checkoutUrl = "";
+    let productId = "";
     
     if (hasExtra1 && hasExtra2) {
       // Guia + ambos os bônus
       checkoutUrl = "https://pay.kiwify.com.br/OLI7mZL";
+      productId = "OLI7mZL";
     } else if (hasExtra1) {
       // Guia + Sono de Ouro
       checkoutUrl = "https://pay.kiwify.com.br/b5tap77";
+      productId = "b5tap77";
     } else if (hasExtra2) {
       // Guia + Pack Completo de Chás
       checkoutUrl = "https://pay.kiwify.com.br/q1elq7x";
+      productId = "q1elq7x";
     } else {
       // Apenas o Guia
       checkoutUrl = "https://pay.kiwify.com.br/lGmFEdH";
+      productId = "lGmFEdH";
+    }
+    
+    // Track InitiateCheckout with Meta Pixel
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'InitiateCheckout', {
+        content_ids: [productId],
+        content_type: 'product',
+        currency: 'BRL',
+        value: calculateTotal()
+      });
     }
     
     window.location.href = checkoutUrl;
