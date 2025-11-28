@@ -86,8 +86,26 @@ const PreCheckout = () => {
   };
 
   const handleCheckout = () => {
-    // This would connect to your payment system
-    alert(`Total: R$ ${calculateTotal()}\nRedirecionando para pagamento seguro...`);
+    const hasExtra1 = selectedItems.includes("extra1");
+    const hasExtra2 = selectedItems.includes("extra2");
+    
+    let checkoutUrl = "";
+    
+    if (hasExtra1 && hasExtra2) {
+      // Guia + ambos os bônus
+      checkoutUrl = "https://pay.kiwify.com.br/OLI7mZL";
+    } else if (hasExtra1) {
+      // Guia + Sono de Ouro
+      checkoutUrl = "https://pay.kiwify.com.br/b5tap77";
+    } else if (hasExtra2) {
+      // Guia + Pack Completo de Chás
+      checkoutUrl = "https://pay.kiwify.com.br/q1elq7x";
+    } else {
+      // Apenas o Guia
+      checkoutUrl = "https://pay.kiwify.com.br/lGmFEdH";
+    }
+    
+    window.location.href = checkoutUrl;
   };
 
   useEffect(() => {
