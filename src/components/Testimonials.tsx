@@ -5,12 +5,12 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
 const testimonials = [
-  { id: 1, video: "/videos/testimonial-1.mp4", name: "Maria, 42" },
-  { id: 2, video: "/videos/testimonial-2.mp4", name: "João, 38" },
-  { id: 3, video: "/videos/testimonial-3.mp4", name: "Ana, 51" },
+  { id: 1, video: "/videos/testimonial-1.mp4" },
+  { id: 2, video: "/videos/testimonial-2.mp4" },
+  { id: 3, video: "/videos/testimonial-3.mp4" },
 ];
 
-const TestimonialCard = ({ video, name, index }: { video: string; name: string; index: number }) => {
+const TestimonialCard = ({ video, index }: { video: string; index: number }) => {
   const ref = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(true);
@@ -46,14 +46,6 @@ const TestimonialCard = ({ video, name, index }: { video: string; name: string; 
           >
             <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform animate-pulse">
               <Play className="w-8 h-8 text-accent-foreground ml-1" fill="currentColor" />
-            </div>
-            <div className="absolute bottom-3 left-3 right-3 text-white">
-              <div className="flex items-center gap-1 mb-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3 h-3 text-accent" fill="currentColor" />
-                ))}
-              </div>
-              <p className="text-sm font-semibold drop-shadow-lg">{name}</p>
             </div>
           </button>
         )}
