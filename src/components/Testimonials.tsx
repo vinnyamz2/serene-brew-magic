@@ -98,7 +98,7 @@ const Testimonials = () => {
 
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           {testimonials.map((t, i) => (
-            <TestimonialCard key={t.id} video={t.video} name={t.name} index={i} />
+            <TestimonialCard key={t.id} video={t.video} index={i} />
           ))}
         </div>
 
